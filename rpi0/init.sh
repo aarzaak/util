@@ -9,8 +9,8 @@ sudo apt update
 sudo apt full-upgrade -y
 echo "System was upgraded."
 
-echo "Time to install basic tools (git and need-restart):"
-sudo apt install git need-restart -y
+echo "Time to install basic tools (need-restart):"
+sudo apt install need-restart -y
 echo "Basic tools were installed."
 
 echo "Time to fix that nasty warning we get when updating repositories:"
@@ -28,4 +28,3 @@ echo ".list files were upgraded."
 echo "Should you reboot?"
 sudo need-restart
 echo "Would you like to reboot now? TODO"
-
