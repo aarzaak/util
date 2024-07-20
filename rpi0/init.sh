@@ -27,4 +27,14 @@ echo -e "### .list files were upgraded. ###\n"
 
 echo -e "### Should you reboot? ###"
 sudo needrestart
-echo -e "### Would you like to reboot now? TODO ###"
+
+yesnoanswer="null"
+while [[ ! ${yesnoanswer,,} =~ ^([yn]|yes|no)?$ ]]; do
+	read -r -p "Would you like to reboot? [y/n] " yesnoanswer
+done
+case ${yesnoanswer,,} in
+	y|yes) sudo shutdown -r now;;
+	n|no) exit 0;;
+	*) echo "An error has occurred, this is unfortunate… ¯\_(ツ)_/¯";;
+esac
+
