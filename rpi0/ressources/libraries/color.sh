@@ -36,7 +36,7 @@ FWHITE='\033[2;37m'       # White
 # Italic
 IBLACK='\033[3;30m'       # Black
 IRED='\033[3;31m'         # Red
-IGREEN'\033[3;32m'       # Green
+IGREEN='\033[3;32m'       # Green
 IYELLOW='\033[3;33m'      # Yellow
 IBLUE='\033[3;34m'        # Blue
 IPURPLE='\033[3;35m'      # Purple
