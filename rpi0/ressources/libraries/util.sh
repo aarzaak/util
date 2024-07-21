@@ -7,7 +7,8 @@ FILES_DIR="./ressources/files"
 askReboot() {
 	yesnoanswer="null"
 	while [[ ! ${yesnoanswer,,} =~ ^([yn]|yes|no)?$ ]]; do
-		read -p "${BLUE}Would you like to reboot? [y/n]${NS} " yesnoanswer
+		printf "${YELLOW}Would you like to reboot? [y/n]${NS} "
+		read -r yesnoanswer
 	done
 	case ${yesnoanswer,,} in
 		y|yes) printf "${GREEN}Rebooting…${NS}"; sleep 3; sudo shutdown -r now;;
