@@ -7,7 +7,7 @@ FILES_DIR="../files"
 askReboot() {
 	yesnoanswer="null"
 	while [[ ! ${yesnoanswer,,} =~ ^([yn]|yes|no)?$ ]]; do
-		read -r -p "${BLUE}}Would you like to reboot? [y/n] " yesnoanswer
+		read -r -p "${BLUE}Would you like to reboot? [y/n] " yesnoanswer
 	done
 	case ${yesnoanswer,,} in
 		y|yes) printf "${GREEN}Rebooting…"; sleep 3; sudo shutdown -r now;;
