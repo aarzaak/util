@@ -2,7 +2,7 @@
 
 . ./ressources/libraries/color.sh
 
-FILES_DIR="../files"
+FILES_DIR="./ressources/files"
 
 askReboot() {
 	yesnoanswer="null"
