@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./color.sh
+. ./ressources/libraries/color.sh
 
 FILES_DIR="../files"
 
