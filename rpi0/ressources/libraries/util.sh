@@ -7,7 +7,7 @@ FILES_DIR="./ressources/files"
 askReboot() {
 	yesnoanswer="null"
 	while [[ ! ${yesnoanswer,,} =~ ^([yn]|yes|no)?$ ]]; do
-		printf "${YELLOW}Would you like to reboot? [y/n]${NS} "
+		printf "${YELLOW}Would you like to reboot? [y/n] ${NS}"
 		read -r yesnoanswer
 	done
 	case ${yesnoanswer,,} in
@@ -36,11 +36,19 @@ upgradeSystem() {
 	printf "${BLUE}Upgrading system…${NS}\n"
 	sudo apt full-upgrade -y
 	printf "${GREEN}System is now up-to-date.${NS}\n"
+
+	printf "${BLUE}Removing packages that are not required anymore…${NS}\n"
+	sudo apt autoremove -y
+	printf "${GREEN}Packages that are not required anymore were removed.${NS}\n"
+
+	printf "${BLUE}Cleaning cache…${NS}\n"
+	sudo apt autoclean
+	printf "${GREEN}Cache was cleaned.${NS}\n"
 }
 
 installBasicTools() {
 	printf "${BLUE}Installing basic tools (needrestart)…${NS}\n"
-	sudo apt install needrestart -y
+	sudo apt install needrestart git mosh micro vim -y
 	printf "${GREEN}Basic tools were installed.${NS}\n"
 }
 
